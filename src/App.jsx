@@ -15,6 +15,12 @@ export function App () {
       const {fact} = data 
       setFact(fact)
 
+    })
+    }, [])
+
+    useEffect(()=>{
+      if(!fact) return
+      
       const threeFirstWords = fact.split(' ', 3).join(' ')
       console.log(threeFirstWords);
 
@@ -24,11 +30,7 @@ export function App () {
         const {url}= response
         setImageUrl(url)
       })
-    }
-  )
-      
-
-  }, [])
+    }, [])
   return (
         <main>
         <h1>Hello word</h1>
